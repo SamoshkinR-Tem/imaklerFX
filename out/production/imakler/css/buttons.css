@@ -1,0 +1,10 @@
+/*
+* Обращение к css классу начинается с "."
+* Обращение к css ID начинается с "#"
+*/
+
+.primary-btn{
+    -fx-background-color: yellow;
+    -fx-text-fill: rgba(0, 0, 0, 100);
+    -fx-font-weight: bold;
+}

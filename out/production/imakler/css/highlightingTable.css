@@ -1,0 +1,15 @@
+.rowStyleClasslightGreen {
+    -fx-background-color: rgba(124, 252, 0, 0.312);
+}
+.rowStyleClassGreen {
+    -fx-background-color: rgba(34, 139, 34, 0.312);
+}
+.rowStyleClassYellow {
+    -fx-background-color: rgba(255, 255, 0, 0.312);
+}
+.rowStyleClassRed {
+    -fx-background-color: rgba(255, 0, 0, 0.312);
+}
+.rowStyleClassBlue {
+    -fx-background-color: rgba(0, 0, 255, 0.312);
+}

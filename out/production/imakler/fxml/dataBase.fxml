@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?data.xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="anchorPane" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="1200.0" prefHeight="400.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DataBaseCtrl">
+   <children>
+      <HBox maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="1100.0" spacing="7.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <TableView id="tvDataBase" fx:id="tvDataBase" minWidth="950.0" prefHeight="380.0" prefWidth="1060.0">
+               <columns>
+                  <TableColumn id="flatIdCol" fx:id="flatIdCol" maxWidth="25.0" minWidth="25.0" prefWidth="25.0" resizable="false" text="# " />
+                  <TableColumn id="roomsNumCol" fx:id="roomsNumCol" maxWidth="25.0" minWidth="25.0" prefWidth="25.0" resizable="false" text="Ком." />
+                  <TableColumn id="dateOfCallCol" fx:id="dateOfCallCol" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" text="Дата звонка" />
+                  <TableColumn id="priceCol" fx:id="priceCol" maxWidth="800.0" minWidth="80.0" text="Цена" />
+                  <TableColumn id="addressCol" fx:id="addressCol" maxWidth="1800.0" minWidth="180.0" prefWidth="180.0" text="Адрес" />
+                  <TableColumn id="parametersCol" fx:id="parametersCol" maxWidth="90.0" minWidth="90.0" prefWidth="90.0" text="Параметры" />
+                  <TableColumn id="conditionCol" fx:id="conditionCol" maxWidth="2000.0" minWidth="200.0" prefWidth="200.0" text="Состояние" />
+                  <TableColumn id="contactNumCol" fx:id="contactNumCol" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="Номер тел." />
+                  <TableColumn id="contactNameCol" fx:id="contactNameCol" maxWidth="7000.0" minWidth="70.0" prefWidth="70.0" text="Зовут" />
+                  <TableColumn id="contactStatusCol" fx:id="contactStatusCol" maxWidth="40.0" minWidth="40.0" prefWidth="40.0" text="Статус" />
+                  <TableColumn id="dateOfComeCol" fx:id="dateOfComeCol" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" text="Пришла" />
+                  <TableColumn fx:id="aviso" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" resizable="false" text="Aviso" />
+                  <TableColumn id="kievDistrictCol" fx:id="kievDistrictCol" maxWidth="80.0" minWidth="80.0" text="Микрорайон" />
+               </columns>
+            </TableView>
+            <VBox minHeight="380.0" minWidth="120.0" spacing="10.0">
+               <children>
+                  <Button id="btnNewFlat" fx:id="btnNewFlat" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="30.0" minWidth="120.0" mnemonicParsing="false" onAction="#btnNewFlatClicked" prefHeight="30.0" prefWidth="120.0" text="Add New Flat">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <ToggleButton id="tbEditInTable" fx:id="togbEditInTable" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="30.0" minWidth="120.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" text="Edit in Table">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="14.0" />
+                     </font>
+                  </ToggleButton>
+                  <Button id="btnToArchiv" fx:id="btnToArchiv" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="30.0" minWidth="120.0" mnemonicParsing="false" onAction="#btnToArchivClicked" prefHeight="30.0" prefWidth="120.0" text="To Archive">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button id="btnViewAviso" fx:id="btnViewAviso" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="30.0" minWidth="120.0" mnemonicParsing="false" onAction="#btnViewAvisoClicked" prefHeight="30.0" prefWidth="120.0" text="View Aviso">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <ToggleButton id="tbSelectTable" fx:id="togbSelectTable" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="30.0" minWidth="120.0" mnemonicParsing="false" onAction="#togbSelectTablePressed" prefHeight="30.0" prefWidth="120.0" text="Select Table">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="14.0" />
+                     </font>
+                  </ToggleButton>
+                  <MenuButton fx:id="customersMenuBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="25.0" minWidth="120.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="120.0" text="Customers">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="12.0" />
+                     </font></MenuButton>
+                  <Button id="btnSaveTable" fx:id="btnSaveTable" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="30.0" minWidth="120.0" mnemonicParsing="false" onAction="#btnSaveTableClicked" prefHeight="30.0" prefWidth="120.0" text="Save Table">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="120.0" />
+                     </VBox.margin>
+                  </Button>
+               </children></VBox>
+         </children>
+         <rotationAxis>
+            <Point3D />
+         </rotationAxis>
+      </HBox>
+   </children>
+</AnchorPane>

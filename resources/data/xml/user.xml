@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<users class="User">
+    <user index="0">
+        <username>adsf</username>
+        <password>asdf</password>
+    </user>
+    <user index="1">
+        <username>asdf</username>
+        <password>asdf</password>
+    </user>
+</users>

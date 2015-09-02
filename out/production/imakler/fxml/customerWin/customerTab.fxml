@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Tab fx:id="tabCustomer" text="Untitled Tab 1" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.customerWin.CustomerTabCtrl">
+   <content>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+         <children>
+            <SplitPane dividerPositions="0.5" layoutX="139.0" layoutY="89.0" prefHeight="571.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <items>
+                  <AnchorPane minHeight="0.0" minWidth="737.0" prefHeight="160.0" prefWidth="737.0">
+                     <children>
+                        <SplitPane dividerPositions="0.618" layoutX="132.0" layoutY="199.0" orientation="VERTICAL" prefHeight="569.0" prefWidth="737.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <items>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                 <children>
+                                    <GridPane layoutX="195.0" layoutY="74.0" prefHeight="347.0" prefWidth="735.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <TableView fx:id="tbSeenFlats" minWidth="367.0" prefHeight="200.0" prefWidth="367.0">
+                                             <columnResizePolicy>
+                                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy>
+                                             <columns>
+                                                <TableColumn fx:id="tcSeenFlats" minWidth="275.0" prefWidth="275.0" text="Уже смотрел" />
+                                                <TableColumn fx:id="tcDateSeen" minWidth="90.0" prefWidth="90.0" resizable="false" text="Дата/Время" />
+                                             </columns>
+                                          </TableView>
+                                          <TableView fx:id="tbFlatsToBeSeen" minWidth="368.0" prefHeight="200.0" prefWidth="368.0" GridPane.columnIndex="1">
+                                             <columnResizePolicy>
+                                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy>
+                                             <columns>
+                                                <TableColumn fx:id="tcFlatsToBeSeen" minWidth="275.0" prefWidth="275.0" text="Варианты на просмотр" />
+                                                <TableColumn fx:id="tcDateToBeSeen" minWidth="90.0" prefWidth="90.0" resizable="false" text="Дата/Время" />
+                                             </columns>
+                                          </TableView>
+                                       </children>
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="367.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="368.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                    </GridPane>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane />
+                           </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+                  <ScrollPane fx:id="spForWebView" prefHeight="200.0" prefWidth="200.0">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+                     </content>
+                  </ScrollPane>
+               </items>
+            </SplitPane>
+         </children>
+      </AnchorPane>
+   </content>
+</Tab>
