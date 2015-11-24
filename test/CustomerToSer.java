@@ -27,7 +27,7 @@ public class CustomerToSer {
     }
     @Test
     public void readObjFromFile (){
-        ArrayList<Flat> flats = new FileUtil<Flat>().readObjFromFile("C:/Users/R-Tem/IdeaProjects/imakler/resources/data/ser/customers.ser");
+        ArrayList<Flat> flats = new FileUtil<Flat>().readObjFromFile("src/main/resources/data/ser/customers.ser");
         for (int i = 0; i < flats.size(); i++) {
             System.out.println(flats.get(i));
         }

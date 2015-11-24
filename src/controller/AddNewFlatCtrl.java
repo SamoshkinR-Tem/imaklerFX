@@ -119,6 +119,7 @@ public class AddNewFlatCtrl {
     public void setMainApp(MainApp mainApp) {
         this.mainApp = mainApp;
     }
+
     public void setRoomsNumGroup() {
         rb1k.setUserData("1к");
         rb1k.setToggleGroup(roomsNumGroup);
@@ -129,12 +130,14 @@ public class AddNewFlatCtrl {
         rb4k.setUserData("4к");
         rb4k.setToggleGroup(roomsNumGroup);
     }
+
     public void setStatusGroup() {
         rbHoz.setUserData("хоз.");
         rbHoz.setToggleGroup(statusGroup);
         rbPos.setUserData("пос.");
         rbPos.setToggleGroup(statusGroup);
     }
+
     public void setMarkerGroup() {
         rbLightGreen.setUserData("lightGreen");
         rbLightGreen.setToggleGroup(markerGroup);

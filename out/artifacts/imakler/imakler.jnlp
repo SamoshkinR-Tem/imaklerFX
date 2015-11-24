@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="imakler.jnlp">
   <information>
-    <title>Sample JavaFX Application</title>
-    <vendor>Unknown vendor</vendor>
-    <description>Sample JavaFX 2.0 application.</description>
+    <title>imakler</title>
+    <vendor>Unknown</vendor>
+    <description>imakler</description>
     <offline-allowed/>
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="imakler.jar" size="66462" download="eager" />
+    <jar href="imakler.jar" size="69450" download="eager" />
   </resources>
   <jfx:javafx-desc  width="1200" height="600" main-class="model.MainApp"  name="imakler" />
   <update check="background"/>

@@ -40,6 +40,26 @@ public class FileUtil<T> implements IFileTools<T> {
     }
 
     @Override
+    public ArrayList<String[]> readStringFromFile(String path, String RegExp) {
+        ArrayList<String[]> fileStrings = new ArrayList<>();
+        File file = new File(path);
+        FileReader reader = null;
+        try {
+            reader = new FileReader(file);
+
+            BufferedReader buffer = new BufferedReader(reader);
+            String line;
+            while ((line = buffer.readLine()) != null) {
+                String[] preEntity = line.split(RegExp);
+                fileStrings.add(preEntity);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return fileStrings;
+    }
+
+    @Override
     public void writeObjToFile(T object, String path) {
         try {
             FileOutputStream fos = new FileOutputStream(path);
@@ -50,7 +70,22 @@ public class FileUtil<T> implements IFileTools<T> {
         }
     }
 
-    public void wrireFlatsToXML(ArrayList<Flat> flats) {
+    @Override
+    public ArrayList<T> readObjFromFile(String path) {
+        ArrayList<T> arrayList = new ArrayList<T>();
+        try {
+            FileInputStream fis = new FileInputStream(path);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            arrayList = (ArrayList<T>) ois.readObject();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return arrayList;
+    }
+
+    public void writeFlatsToXML(ArrayList<Flat> flats) {
         DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder documentBuilder = null;
         try {
@@ -142,84 +177,6 @@ public class FileUtil<T> implements IFileTools<T> {
         }
     }
 
-    public void writeUserToXML(ArrayList<User> users) {
-        DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder documentBuilder = null;
-        try {
-            documentBuilder = documentBuilderFactory.newDocumentBuilder();
-        } catch (ParserConfigurationException e) {
-            e.printStackTrace();
-        }
-        Document document = documentBuilder.newDocument();
-        Element rootElement = document.createElement("users");
-        rootElement.setAttribute("class", "User");
-        document.appendChild(rootElement);
-
-        for (int i = 0; i < users.size(); i++) {
-            Element userNameElement = document.createElement("username");
-            userNameElement.appendChild(document.createTextNode(users.get(i).getUserName())); // first variant
-            Element passwordElement = document.createElement("password");
-            passwordElement.setTextContent(users.get(i).getPassword()); // seccond variant
-
-            Element userElement = document.createElement("user");
-            userElement.setAttribute("index", String.valueOf(i));
-            userElement.appendChild(userNameElement);
-            userElement.appendChild(passwordElement);
-
-            rootElement.appendChild(userElement);
-        }
-        TransformerFactory transformerFactory = TransformerFactory.newInstance();
-        try {
-            Transformer transformer = transformerFactory.newTransformer();
-            DOMSource source = new DOMSource(document);
-            StreamResult result = new StreamResult(new FileWriter("src/main/resources/data/xml/user.xml"));
-            transformer.transform(source, result);
-//            StreamResult resultStream = new StreamResult(System.out);
-//            transformer.transform(source, resultStream);
-        } catch (TransformerConfigurationException e) {
-            e.printStackTrace();
-        } catch (TransformerException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
-    public ArrayList<String[]> readStringFromFile(String path, String RegExp) {
-        ArrayList<String[]> fileStrings = new ArrayList<>();
-        File file = new File(path);
-        FileReader reader = null;
-        try {
-            reader = new FileReader(file);
-
-            BufferedReader buffer = new BufferedReader(reader);
-            String line;
-            while ((line = buffer.readLine()) != null) {
-                String[] preEntity = line.split(RegExp);
-                fileStrings.add(preEntity);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return fileStrings;
-    }
-
-    @Override
-    public ArrayList<T> readObjFromFile(String path) {
-        ArrayList<T> arrayList = new ArrayList<T>();
-        try {
-            FileInputStream fis = new FileInputStream(path);
-            ObjectInputStream ois = new ObjectInputStream(fis);
-            arrayList = (ArrayList<T>) ois.readObject();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        return arrayList;
-    }
-
     public ArrayList<T> readFlatsFromXML (String path) {
         ArrayList<T> flats = new ArrayList<>();
         Flat flat = new Flat();
@@ -264,4 +221,48 @@ public class FileUtil<T> implements IFileTools<T> {
         }
         return flats;
     }
+
+    public void writeUserToXML(ArrayList<User> users) {
+        DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder documentBuilder = null;
+        try {
+            documentBuilder = documentBuilderFactory.newDocumentBuilder();
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        }
+        Document document = documentBuilder.newDocument();
+        Element rootElement = document.createElement("users");
+        rootElement.setAttribute("class", "User");
+        document.appendChild(rootElement);
+
+        for (int i = 0; i < users.size(); i++) {
+            Element userNameElement = document.createElement("username");
+            userNameElement.appendChild(document.createTextNode(users.get(i).getUserName())); // first variant
+            Element passwordElement = document.createElement("password");
+            passwordElement.setTextContent(users.get(i).getPassword()); // seccond variant
+
+            Element userElement = document.createElement("user");
+            userElement.setAttribute("index", String.valueOf(i));
+            userElement.appendChild(userNameElement);
+            userElement.appendChild(passwordElement);
+
+            rootElement.appendChild(userElement);
+        }
+        TransformerFactory transformerFactory = TransformerFactory.newInstance();
+        try {
+            Transformer transformer = transformerFactory.newTransformer();
+            DOMSource source = new DOMSource(document);
+            StreamResult result = new StreamResult(new FileWriter("src/main/resources/data/xml/user.xml"));
+            transformer.transform(source, result);
+//            StreamResult resultStream = new StreamResult(System.out);
+//            transformer.transform(source, resultStream);
+        } catch (TransformerConfigurationException e) {
+            e.printStackTrace();
+        } catch (TransformerException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

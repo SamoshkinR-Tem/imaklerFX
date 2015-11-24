@@ -31,7 +31,7 @@ public class WriteFlatsToXML {
         rootElement.setAttribute("class", "Flat");
         document.appendChild(rootElement);
 
-        ArrayList<Flat> flats = new FileUtil<Flat>().readObjFromFile("C:/Users/R-Tem/IdeaProjects/imakler/resources/data/ser/flats.ser");
+        ArrayList<Flat> flats = new FileUtil<Flat>().readObjFromFile("src/main/resources/data/ser/flats.ser");
         for (int i = 0; i < flats.size(); i++) {
             Element idElement = document.createElement("id");
             idElement.appendChild(document.createTextNode(flats.get(i).getId())); // first variant

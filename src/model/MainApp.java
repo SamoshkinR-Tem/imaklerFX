@@ -53,10 +53,10 @@ public class MainApp extends Application {
     //Инициализация любых данных, до включения основного потока Start в работу.
     public void init(){
         flats = FXCollections.observableArrayList(
-                new FileUtil<Flat>().readObjFromFile("C:/Users/R-Tem/IdeaProjects/imakler/out/production/imakler/data/ser/flats.ser"));
+                new FileUtil<Flat>().readObjFromFile("C:/Users/R-Tem/IdeaProjects/imaklerFX/out/production/imakler/data/ser/flats.ser"));
 
         customers = FXCollections.observableArrayList(
-                new FileUtil<Customer>().readObjFromFile("C:/Users/R-Tem/IdeaProjects/imakler/out/production/imakler/data/ser/customers.ser"));
+                new FileUtil<Customer>().readObjFromFile("C:/Users/R-Tem/IdeaProjects/imaklerFX/out/production/imakler/data/ser/customers.ser"));
     }
 
     @Override

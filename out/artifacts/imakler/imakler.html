@@ -15,14 +15,14 @@
 </script>
 
 <script>
-    function javafxEmbed_imakler_id() {
+    function javafxEmbedimakler_id() {
         dtjava.embed(
             {
                 id : 'imakler_id',
                 url : 'imakler.jnlp',
                 placeholder : 'javafx-app-placeholder',
-                width : 1200,
-                height : 600
+                width : '1200',
+                height : '600'
             },
             {
                 javafx : '8.0+'
@@ -31,7 +31,7 @@
         );
     }
     <!-- Embed FX application into web page once page is loaded -->
-    dtjava.addOnloadCallback(javafxEmbed_imakler_id);
+    dtjava.addOnloadCallback(javafxEmbedimakler_id);
 </script>
 
 </head><body>

@@ -88,6 +88,7 @@ public class CustomerCtrl {
         }
         return gridPane;
     }
+
     private Tab readCustomerTab(){
         Tab tab = new Tab();
         try {

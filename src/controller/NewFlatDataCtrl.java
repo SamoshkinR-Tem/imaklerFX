@@ -47,7 +47,7 @@ public class NewFlatDataCtrl {
         } else error.getNewFlat().setKievDistrict(kievDistrict);
         return error;
     }
-    public static class Error {
+    public class Error {
         private Boolean errorBoolean = false;
         private String errorText = "";
         private Flat newFlat = new Flat();

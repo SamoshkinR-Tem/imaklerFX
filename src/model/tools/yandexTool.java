@@ -12,15 +12,7 @@ public class yandexTool {
      * выполняемый браузером для получения координат записанных в нем объектов.
      * The following describes the two methods of working with this file.
     */
-    public String[] readGetCoordsJS(){
-        String[] coords = new String[2];
-        FileUtil fileUtil = new FileUtil();
-        ArrayList<String[]> strings = fileUtil.readStringFromFile("C:\\Users\\R-Tem\\Downloads\\export.txt", ":");
-        for (int i = 0; i < strings.size(); i++) {
-            coords = strings.get(i);
-        }
-        return coords;
-    }
+
     public void writeGetCoordsJS(String address) {
         String jsFile = new String();
         jsFile = "ymaps.ready(init);\n" +
@@ -58,6 +50,16 @@ public class yandexTool {
         }
         String path = "c:\\WebServers\\home\\imakler\\www\\app\\js\\getCoords.js";
         new FileUtil().writeStringToFile(jsFile, path, false);
+    }
+
+    public String[] readGetCoordsJS(){
+        String[] coords = new String[2];
+        FileUtil fileUtil = new FileUtil();
+        ArrayList<String[]> strings = fileUtil.readStringFromFile("C:\\Users\\R-Tem\\Downloads\\export.txt", ":");
+        for (int i = 0; i < strings.size(); i++) {
+            coords = strings.get(i);
+        }
+        return coords;
     }
   /*===============================================================================================================*/
 }
